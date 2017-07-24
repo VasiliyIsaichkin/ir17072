@@ -53,11 +53,14 @@ ngApp.controller('step2Ctrl', function($scope, currentOffer, carsSelected, proce
 });
 
 ngApp.controller('stepsCtrl', function($scope, $location) {
-	$scope.getPath = function() { return $location.path(); };
+	var steps = {
+		1: '/',
+		2: '/step2'
+	};
+	$scope.isStep = function(no) {
+		return steps[no] === $location.path();
+	};
 	$scope.gotoStep = function(no) {
-		$location.path({
-			1: '/',
-			2: '/step2'
-		}[no]);
+		$location.path(steps[no]);
 	};
 });

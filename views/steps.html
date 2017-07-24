@@ -34,13 +34,13 @@
 			</div>
 		</div>
 		<div class="row ui-stepper">
-			<div class="col-xs-6" ng-class="{'active':getPath()=='/'}">
+			<div class="col-xs-6" ng-class="{'active':isStep(1)}">
 				<div class="label">
 					<span>1.</span>
 					<span class="subHeader">Step 1</span>
 				</div>
 			</div>
-			<div class="col-xs-6" ng-class="{'active':getPath()=='/step2'}">
+			<div class="col-xs-6" ng-class="{'active':isStep(2)}">
 				<div class="label">
 					<span>2.</span>
 					<span class="subHeader">Step 2</span>
