@@ -1,0 +1,76 @@
+.ui-stepper {
+	$stepper-color-active : $color-orange;
+	$stepper-color-inactive : $color-gray;
+	padding       : 0 15px 0;
+	@mixin triangle($triagColor,$bgColor) {
+		@extend .triangle;
+		background-color : $bgColor;
+		border-left      : #{$stepper-height/2-($stepper-height/2/100*25)}px solid $triagColor;
+	}
+
+	> div {
+		padding-left  : 0;
+		padding-right : 0;
+		text-align    : center;
+	}
+
+	> :not(.active) {
+		background-color : $stepper-color-inactive;
+	}
+
+	> .active {
+		background-color : $stepper-color-active;
+	}
+
+	> :not(:first-child).active > *:first-child:before {
+		float : left !important;
+		@include triangle($stepper-color-inactive, $stepper-color-active);
+	}
+
+	> :first-child.active > *:last-child:after {
+		float : right !important;
+		@include triangle($stepper-color-active, $stepper-color-inactive);
+	}
+
+	> :first-child {
+		&:not(.active):first-child:before {
+			float : left !important;
+			@include triangle($page-bckg-color, $stepper-color-inactive);
+		}
+
+		&.active:first-child:before {
+			float : left !important;
+			@include triangle($page-bckg-color, $stepper-color-active);
+		}
+	}
+
+	> :last-child {
+		&:not(.active):last-child:after {
+			float : right !important;
+			@include triangle($stepper-color-inactive, $page-bckg-color);
+		}
+		&.active:last-child:after {
+			float : right !important;
+			@include triangle($stepper-color-active, $page-bckg-color);
+		}
+	}
+
+	.triangle {
+		content       : ' ';
+		width         : 0;
+		height        : 0;
+		border-top    : #{$stepper-height/2}px solid transparent;
+		border-bottom : #{$stepper-height/2}px solid transparent;
+	}
+
+	.label {
+		span.subHeader {
+			font-size   : 0.75em !important;
+			font-weight : 600;
+		}
+		line-height : 1.75;
+		font-size   : 1.5em;
+	}
+
+	margin-bottom : 38px;
+}

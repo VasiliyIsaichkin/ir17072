@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ir17072">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=0.7, user-scalable=no">
+	<base href="/"/>
+	<title>Vasiliy Isaichkin's demo -> Steps</title>
+
+	<!-- CSS'es -->
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,900&subset=cyrillic" rel="stylesheet">
+	<link href="/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/libs/ui-rating/css/ui-rating.css" rel="stylesheet">
+	<link href="/scss/steps.css" rel="stylesheet">
+
+	<!-- JS'es -->
+	<script src="/vendor/angular/angular.min.js"></script>
+	<script src="/vendor/angular-route/angular-route.min.js"></script>
+	<script src="/vendor/angular-touch/angular-touch.min.js"></script>
+	<script src="/vendor/underscore/underscore-min.js"></script>
+	<script src="/libs/ui-rating/ui-rating.js"></script>
+	<script src="/js/ui-offer-panel.js"></script>
+	<script src="/js/ngInit.js"></script>
+	<script src="/js/ngCtrls.js"></script>
+	<script src="/js/fixTouchHover.js"></script>
+</head>
+<body>
+<div class="container" ng-controller="stepsCtrl">
+	<!-- Header -->
+	<div class="container-fluid">
+		<div class="row" id="header">
+			<div class="col-xs-12">
+				<h2>Page title</h2>
+			</div>
+		</div>
+		<div class="row ui-stepper">
+			<div class="col-xs-6" ng-class="{'active':getPath()=='/'}">
+				<div class="label">
+					<span>1.</span>
+					<span class="subHeader">Step 1</span>
+				</div>
+			</div>
+			<div class="col-xs-6" ng-class="{'active':getPath()=='/step2'}">
+				<div class="label">
+					<span>2.</span>
+					<span class="subHeader">Step 2</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<ng-view></ng-view>
+
+</div>
+<div class="container footer"></div>
+</body>
+</html>

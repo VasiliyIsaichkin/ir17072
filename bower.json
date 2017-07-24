@@ -1,0 +1,12 @@
+{
+	"name"        : "ru.vasiliyisaichkin.ir17072",
+	"version"     : "0.1.0",
+	"private"     : true,
+	"dependencies": {
+		"angular"      : "1.6",
+		"angular-route": "1.6",
+		"angular-touch": "1.6",
+		"underscore"   : "1.8.3",
+		"bootstrap"    : "3.3.7"
+	}
+}

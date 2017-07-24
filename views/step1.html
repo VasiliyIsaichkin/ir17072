@@ -1,0 +1,49 @@
+<!-- Step 1 -->
+<div class="container-fluid" ng-controller="step1Ctrl">
+	<div class="row pageSubHeader">
+		<div class="col-xs-12">
+			<h3>1. Step 1</h3>
+		</div>
+	</div>
+	<!-- Offer panels -->
+	<div class="row offerPanels">
+		<div ng-repeat="offer in offers"
+		     ui-offer-panel
+		     offer="offer"
+		     items="carsSelected"
+		     accept="btnOfferClick"
+		     unselect="btnUnselectClick"
+		     can-accept="carsSelected.length"
+		></div>
+	</div>
+
+	<!-- Car selection table -->
+	<div class="row" ng-hide="carList.length===carsSelected.length">
+		<div class="col-xs-12 carList" id="carList">
+			<table class="table table-striped table-responsive">
+				<thead>
+				<tr>
+					<th>Title</th>
+					<th>Description</th>
+					<th style="min-width: 40px;width: 100px;">Price</th>
+					<th style="min-width: 172px;width: 200px;">Popularity</th>
+					<th style="width: 1px;"></th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr ng-repeat="car in carList" ng-if="!car.selected">
+					<td data-title="Title" class="tdTitle">{{car.title}}</td>
+					<td data-title="Description">{{car.description}}</td>
+					<td data-title="Price">{{car.price}} $</td>
+					<td data-title="Popularity" class="tableTdRating">
+						<span ui-rating ng-model="car.popularity" read-only="true"></span>
+					</td>
+					<td data-title="">
+						<button type="button" class="btn tableSelectBtn" ng-click="btnSelectClick(car)">Select</button>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

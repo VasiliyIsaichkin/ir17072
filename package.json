@@ -1,0 +1,11 @@
+{
+	"name"        : "ru.vasiliyisaichkin.ir17072",
+	"version"     : "0.1.0",
+	"private"     : true,
+	"dependencies": {
+		"express"    : "^4.15.3",
+		"mz"         : "^2.6.0",
+		"node-sass"  : "^4.5.3",
+		"body-parser": "^1.17.2"
+	}
+}

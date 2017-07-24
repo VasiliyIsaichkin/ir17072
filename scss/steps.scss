@@ -1,0 +1,167 @@
+@import "variables";
+
+body {
+	font-family : 'Source Sans Pro', sans-serif;
+	font-size   : 18px;
+	min-width   : 420px;
+}
+
+h2 { font-weight : 600; font-size : 2em; }
+
+h3 { font-weight : 400; font-size : 1.5em; }
+
+#header {
+	margin-bottom : 20px;
+}
+
+.noselect, button {
+	-webkit-touch-callout : none;
+	-webkit-user-select   : none;
+	-ms-user-select       : none;
+	user-select           : none;
+}
+
+@import "ui-stepper";
+
+.pageSubHeader { margin-bottom : 18px; }
+
+.btn { outline : none !important; }
+
+.offerPanel {
+	> h4 {
+		font-weight   : 600;
+		font-size     : 1.2em;
+		margin-bottom : 28px;
+	}
+	> p { font-size : 0.85em; }
+
+	.labelsZone {
+		margin  : 10px 0 22px;
+		display : inline-block;
+		.label {
+			line-height      : 32px;
+			cursor           : pointer;
+			background-color : #f0ad4e;
+			margin-right     : 18px;
+		}
+	}
+
+	&#offer1 button.btn {
+		background-color : #f15a29;
+		border-color     : #f15a29;
+	}
+	&#offer2 button.btn {
+		background-color : #75bad3;
+		border-color     : #75bad3;
+	}
+	&#offer3 button.btn {
+		background-color : #78a240;
+		border-color     : #78a240;
+	}
+
+	@media only screen and (max-width : 992px) {
+		.labelsZone, .buttonZone {
+			text-align : center;
+		}
+	}
+
+	button.btn {
+		outline : none;
+		padding : 10px 56px;
+		color   : #ffffff;
+	}
+	padding          : 18px 26px 26px;
+	border           : #e6e7e8 solid 1px;
+	border-radius    : 0;
+	background-color : #fafafa;
+}
+
+.carList {
+	margin-top : 80px;
+
+	.btn {
+		padding     : 6px 26px;
+		font-weight : 600;
+	}
+
+	.tableSelectBtn {
+		&:hover {
+			color            : #ffffff;
+			background-color : #78a240;
+			border-color     : #78a240;
+		}
+		&:active {
+			color            : #ffffff;
+			background-color : #78a240;
+			border-color     : #78a240;
+		}
+		color            : #78a240;
+		background-color : #ffffff;
+		border-color     : #78a240;
+	}
+
+	.tableRemoveBtn {
+		&:hover {
+			color            : #ffffff;
+			background-color : #e14400;
+			border-color     : #e14400;
+		}
+		&:active {
+			color            : #ffffff;
+			background-color : #e14400;
+			border-color     : #e14400;
+		}
+		color            : #e14400;
+		background-color : #ffffff;
+		border-color     : #e14400;
+	}
+
+	.tdTitle {
+		color       : #1c75bc;
+		font-weight : 600;
+	}
+
+	td {
+		display        : table-cell;
+		vertical-align : middle !important;
+	}
+
+	th { font-weight : 600; }
+
+	&#carList, &#selectedCarList {
+		@media only screen and (max-width : 992px) {
+			table, thead, tbody, th, td, tr { display : block; }
+			thead tr {
+				position : absolute;
+				top      : -9999px;
+				left     : -9999px;
+			}
+			tr { border : 1px solid #dddddd; }
+
+			td {
+				border        : none;
+				border-bottom : 1px solid #dddddd;
+				position      : relative;
+				padding-left  : 35%;
+				white-space   : normal;
+				text-align    : left;
+				&:before {
+					color         : #333333;
+					position      : absolute;
+					top           : 6px;
+					left          : 6px;
+					width         : 45%;
+					padding-right : 10px;
+					white-space   : nowrap;
+					text-align    : left;
+					font-weight   : bold;
+					content       : attr(data-title);
+				}
+			}
+		}
+	}
+}
+
+.footer {
+	margin-top : 40px;
+}
